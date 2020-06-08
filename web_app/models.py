@@ -7,13 +7,19 @@ db = SQLAlchemy()
 
 migrate = Migrate()
 
-class Book(db.Model):
+class Tweet(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    title = db.Column(db.String(128))
-    author_id = db.Column(db.String(128))
+    tweet_text = db.Column(db.String(128))
 
     def __repr__(self):
-        return f"<Book {self.id} {self.title}>"
+        return f"<Tweet {self.id} {self.tweet_text}>"
+
+class User(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    username = db.Column(db.String(128))
+
+    def __repr__(self):
+        return f"<User {self.id} {self.username}>"
     
 def parse_records(database_records):
     """
