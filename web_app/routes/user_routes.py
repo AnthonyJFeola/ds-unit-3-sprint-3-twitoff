@@ -23,19 +23,19 @@ def list_users():
 
     return render_template("users.html", message="Here's some users", users=users)
 
-@user_routes.route("/users/new")
-def new_user():
-    return render_template("new_user.html")
+#@user_routes.route("/users/new")
+#def new_user():
+#    return render_template("new_user.html")
 
-@user_routes.route("/users/create", methods=["POST"])
-def create_user():
-    print("FORM DATA:", dict(request.form))
+#@user_routes.route("/users/create", methods=["POST"])
+#def create_user():
+#    print("FORM DATA:", dict(request.form))
     
-    new_user = User(username=request.form["username"])
-    db.session.add(new_user)
-    db.session.commit()
+#    new_user = User(username=request.form["username"])
+#    db.session.add(new_user)
+#    db.session.commit()
 
-    return jsonify({
-        "message": "USER CREATED",
-        "user": dict(request.form)
-    })
+#    return jsonify({
+#        "message": "USER CREATED",
+#        "user": dict(request.form)
+#    })
