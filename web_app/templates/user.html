@@ -1,13 +1,10 @@
 <!-- web_app/templates/user.html -->
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+{% extends "bootstrap_layout.html" %}
+{% set active_page = "user" %}
+
+{% block content %}
+
     
     <h2>Twitter User: {{ user.screen_name }} </h2>
 
@@ -26,5 +23,4 @@
         <p>No tweets found.</p>
     {% endif %}
 
-</body>
-</html>
+{% endblock %}

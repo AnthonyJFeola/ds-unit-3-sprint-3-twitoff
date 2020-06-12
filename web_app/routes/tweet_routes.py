@@ -22,7 +22,7 @@ def list_tweets():
     tweets = parse_records(tweet_records)
     print(tweets)
 
-    return render_template("tweets.html", message="Here's some tweets", tweets=tweets)
+    return render_template("tweets.html", message="Here is a dump of the tweets stored in the database:", tweets=tweets)
 
 #@tweet_routes.route("/tweets/new")
 #def new_tweet():

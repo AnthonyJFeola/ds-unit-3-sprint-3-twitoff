@@ -21,7 +21,7 @@ def list_users():
     print(user_records)
     users = parse_records(user_records)
 
-    return render_template("users.html", message="Here's some users", users=users)
+    return render_template("users.html", message="Here is a dump of the users stored in the database:", users=users)
 
 #@user_routes.route("/users/new")
 #def new_user():

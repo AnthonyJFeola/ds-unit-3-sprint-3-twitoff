@@ -1,64 +1,53 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-    <h2>Prediction Time</h2>
+{% extends "bootstrap_layout.html" %}
+{% set active_page = "prediction_form" %}
 
-    <p>Use the form below to predict which user is more likely to say a given tweet...</p>
+{% block content %}
+    
+    <h2>Generate Predictions:</h2>
+
+    <p>Use the form below to predict which user is more likely to post a given tweet.</p>
 
     <form action="/predict" method="POST">
 
         <label>Twitter User A:</label>
         <select name="screen_name_a">
-            <option value="elonmusk" selected="true">@elonmusk</option>
+            <option value="elonmusk">@elonmusk</option>
             <option value="justinbieber">@justinbieber</option>
-            <option value="CNN">@CNN</option>
-            <option value="YouTube">@YouTube</option>
             <option value="jimmyfallon">@jimmyfallon</option>
-            <option value="FBI">@FBI</option>
-            <option value="NYSE">@NYSE</option>
-            <option value="NRA">@NRA</option>
             <option value="TuckerCarlson">@TuckerCarlson</option>
-            <option value="Xbox">@Xbox</option>
-            <option value="realDonaldTrump">@realDonaldTrump</option>
-            <option value="USAWrestling">@USAWrestling</option>
+            <option value="realDonaldTrump"selected="true">@realDonaldTrump</option>
             <option value="KimKardashian">@KimKardashian</option>
             <option value="MSCSealift">@MSCSealift</option>
             <option value="TomBrady">@TomBrady</option>
+            <option value="JoeBiden">@JoeBiden</option>
+            <option value="benshapiro">@benshapiro</option>
+            <option value="MaritimeCollege">@MaritimeCollege</option>
+
         </select>
         <br>
 
         <label>Twitter User B:</label>
         <select name="screen_name_b">
             <option value="elonmusk">@elonmusk</option>
-            <option value="justinbieber"selected="true">@justinbieber</option>
-            <option value="CNN">@CNN</option>
-            <option value="YouTube">@YouTube</option>
+            <option value="justinbieber">@justinbieber</option>
             <option value="jimmyfallon">@jimmyfallon</option>
-            <option value="FBI">@FBI</option>
-            <option value="NYSE">@NYSE</option>
-            <option value="NRA">@NRA</option>
             <option value="TuckerCarlson">@TuckerCarlson</option>
-            <option value="Xbox">@Xbox</option>
             <option value="realDonaldTrump">@realDonaldTrump</option>
-            <option value="USAWrestling">@USAWrestling</option>
             <option value="KimKardashian">@KimKardashian</option>
             <option value="MSCSealift">@MSCSealift</option>
             <option value="TomBrady">@TomBrady</option>
+            <option value="JoeBiden"selected="true">@JoeBiden</option>
+            <option value="benshapiro">@benshapiro</option>
+            <option value="MaritimeCollege">@MaritimeCollege</option>
+
           </select>
         <br>
 
         <label>Tweet Text:</label>
-        <input type="text" name="tweet_text" placeholder="Tesla Model S production facility is great" value="Tesla Model S production facility is great">
+        <input type="text" name="tweet_text" placeholder="Enter desired tweet">
         <br>
 
         <button>Submit</button>
     </form>
 
-</body>
-</html>
+{% endblock %}
